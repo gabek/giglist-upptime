@@ -7,8 +7,7 @@ sites:
     url: https://gigl.ist
 
 status-website:
-  # Swap `baseUrl` for `cname: status.gigl.ist` if you add a custom domain.
-  baseUrl: /giglist-upptime
+  cname: status.gigl.ist
   name: Giglist Status
   introTitle: "**Giglist** status page"
   introMessage: Real-time status for [gigl.ist](https://gigl.ist), powered by GitHub Actions via [Upptime](https://upptime.js.org).
