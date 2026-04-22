@@ -1,20 +1,20 @@
 [
   {
-    "name": "gigl.ist",
-    "url": "https://gigl.ist",
+    "name": "Giglist service",
+    "url": "https://gigl.ist/health",
     "icon": "https://icons.duckduckgo.com/ip3/gigl.ist.ico",
-    "slug": "gigl-ist",
+    "slug": "giglist-service",
     "status": "up",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 455,
-    "timeDay": 455,
-    "timeWeek": 455,
-    "timeMonth": 455,
-    "timeYear": 455,
+    "time": 486,
+    "timeDay": 486,
+    "timeWeek": 486,
+    "timeMonth": 486,
+    "timeYear": 486,
     "dailyMinutesDown": {}
   }
 ]
