@@ -1,0 +1,85 @@
+name: PagerDuty Notify
+on:
+  issues:
+    types: [opened, closed, reopened]
+
+jobs:
+  notify:
+    # Only fire for Upptime-created downtime issues (labeled "status").
+    # Upptime itself labels with ["status", "<site-slug>", ...tags].
+    if: contains(github.event.issue.labels.*.name, 'status')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send event to PagerDuty
+        env:
+          ROUTING_KEY: ${{ secrets.PAGERDUTY_ROUTING_KEY }}
+          ACTION: ${{ github.event.action }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          REPO: ${{ github.repository }}
+          STATUS_PAGE: https://status.gigl.ist/
+        run: |
+          set -euo pipefail
+          if [ -z "${ROUTING_KEY:-}" ]; then
+            echo "::error::PAGERDUTY_ROUTING_KEY secret is not set"
+            exit 1
+          fi
+
+          # opened / reopened -> trigger; closed -> resolve
+          case "$ACTION" in
+            opened|reopened) EVENT_ACTION="trigger" ;;
+            closed)          EVENT_ACTION="resolve" ;;
+            *) echo "Unsupported action: $ACTION" && exit 0 ;;
+          esac
+
+          DEDUP_KEY="upptime-${REPO}-issue-${ISSUE_NUMBER}"
+
+          if [ "$EVENT_ACTION" = "trigger" ]; then
+            PAYLOAD=$(jq -n \
+              --arg routing_key "$ROUTING_KEY" \
+              --arg dedup_key   "$DEDUP_KEY" \
+              --arg summary     "$ISSUE_TITLE" \
+              --arg source      "gigl.ist" \
+              --arg status_page "$STATUS_PAGE" \
+              --arg issue_url   "$ISSUE_URL" \
+              --arg details     "$ISSUE_BODY" \
+              '{
+                 routing_key: $routing_key,
+                 event_action: "trigger",
+                 dedup_key: $dedup_key,
+                 client: "Upptime",
+                 client_url: $status_page,
+                 payload: {
+                   summary: $summary,
+                   source: $source,
+                   severity: "critical",
+                   component: "gigl.ist",
+                   group: "web",
+                   class: "uptime",
+                   custom_details: { github_issue: $issue_url, body: $details }
+                 },
+                 links: [ { href: $issue_url, text: "GitHub incident issue" } ]
+               }')
+          else
+            PAYLOAD=$(jq -n \
+              --arg routing_key "$ROUTING_KEY" \
+              --arg dedup_key   "$DEDUP_KEY" \
+              '{
+                 routing_key: $routing_key,
+                 event_action: "resolve",
+                 dedup_key: $dedup_key
+               }')
+          fi
+
+          echo "Sending $EVENT_ACTION for dedup_key=$DEDUP_KEY"
+          HTTP_STATUS=$(curl -sS -o /tmp/pd-response.json -w "%{http_code}" \
+            -H "Content-Type: application/json" \
+            -X POST https://events.pagerduty.com/v2/enqueue \
+            -d "$PAYLOAD")
+
+          echo "PagerDuty HTTP $HTTP_STATUS"
+          cat /tmp/pd-response.json
+          echo
+          [ "$HTTP_STATUS" = "202" ]
