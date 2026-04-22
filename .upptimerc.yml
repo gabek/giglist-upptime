@@ -3,14 +3,16 @@ owner: gabek
 repo: giglist-upptime
 
 sites:
-  - name: gigl.ist
-    url: https://gigl.ist
+  - name: Giglist service
+    url: https://gigl.ist/health
 
 status-website:
   cname: status.gigl.ist
   name: Giglist Status
   introTitle: "**Giglist** status page"
-  introMessage: Real-time status for [gigl.ist](https://gigl.ist), powered by GitHub Actions via [Upptime](https://upptime.js.org).
+  introMessage: Status for [gigl.ist](https://gigl.ist).
   navbar:
     - title: Status
       href: /
+    - title: Giglist
+      href: https://gigl.ist
