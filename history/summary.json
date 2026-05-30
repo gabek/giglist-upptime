@@ -6,15 +6,15 @@
     "slug": "giglist-service",
     "status": "up",
     "uptime": "99.93%",
-    "uptimeDay": "97.42%",
+    "uptimeDay": "100.00%",
     "uptimeWeek": "99.63%",
     "uptimeMonth": "99.92%",
     "uptimeYear": "99.93%",
-    "time": 501,
-    "timeDay": 449,
-    "timeWeek": 371,
-    "timeMonth": 550,
-    "timeYear": 501,
+    "time": 493,
+    "timeDay": 162,
+    "timeWeek": 358,
+    "timeMonth": 409,
+    "timeYear": 493,
     "dailyMinutesDown": {
       "2026-05-28": 37
     }
