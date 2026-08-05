@@ -5,16 +5,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/gigl.ist.ico",
     "slug": "giglist-service",
     "status": "up",
-    "uptime": "99.97%",
+    "uptime": "99.98%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.97%",
-    "time": 400,
-    "timeDay": 299,
-    "timeWeek": 381,
-    "timeMonth": 343,
-    "timeYear": 400,
+    "uptimeYear": "99.98%",
+    "time": 398,
+    "timeDay": 206,
+    "timeWeek": 340,
+    "timeMonth": 340,
+    "timeYear": 398,
     "dailyMinutesDown": {
       "2026-05-28": 37
     }
