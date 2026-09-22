@@ -4,20 +4,21 @@
     "url": "https://gigl.ist/health",
     "icon": "https://icons.duckduckgo.com/ip3/gigl.ist.ico",
     "slug": "giglist-service",
-    "status": "up",
+    "status": "down",
     "uptime": "99.97%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.97%",
-    "time": 842,
-    "timeDay": 524,
-    "timeWeek": 463,
-    "timeMonth": 1508,
-    "timeYear": 842,
+    "time": 1142,
+    "timeDay": 24563,
+    "timeWeek": 6481,
+    "timeMonth": 2893,
+    "timeYear": 1142,
     "dailyMinutesDown": {
       "2026-05-28": 37,
-      "2026-08-16": 18
+      "2026-08-16": 18,
+      "2026-09-22": 0
     }
   }
 ]
