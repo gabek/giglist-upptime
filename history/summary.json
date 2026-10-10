@@ -4,22 +4,22 @@
     "url": "https://gigl.ist/health",
     "icon": "https://icons.duckduckgo.com/ip3/gigl.ist.ico",
     "slug": "giglist-service",
-    "status": "down",
-    "uptime": "99.89%",
-    "uptimeDay": "98.76%",
-    "uptimeWeek": "99.82%",
-    "uptimeMonth": "99.49%",
-    "uptimeYear": "99.89%",
-    "time": 1813,
-    "timeDay": 18856,
-    "timeWeek": 10690,
-    "timeMonth": 5323,
-    "timeYear": 1813,
+    "status": "up",
+    "uptime": "99.88%",
+    "uptimeDay": "96.89%",
+    "uptimeWeek": "99.56%",
+    "uptimeMonth": "99.43%",
+    "uptimeYear": "99.88%",
+    "time": 1820,
+    "timeDay": 15728,
+    "timeWeek": 10191,
+    "timeMonth": 5270,
+    "timeYear": 1820,
     "dailyMinutesDown": {
       "2026-05-28": 37,
       "2026-08-16": 18,
       "2026-09-22": 203,
-      "2026-10-10": 18
+      "2026-10-10": 45
     }
   }
 ]
