@@ -1,7 +1,7 @@
 url: https://gigl.ist/health
-status: up
-code: 200
-responseTime: 719
-lastUpdated: 2026-10-13T18:28:25.716Z
+status: down
+code: 503
+responseTime: 35203
+lastUpdated: 2026-10-13T20:53:07.008Z
 startTime: 2026-04-22T21:26:10.798Z
 generator: Upptime <https://github.com/upptime/upptime>
