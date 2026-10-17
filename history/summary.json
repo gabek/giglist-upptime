@@ -6,15 +6,15 @@
     "slug": "giglist-service",
     "status": "up",
     "uptime": "99.80%",
-    "uptimeDay": "99.52%",
-    "uptimeWeek": "97.45%",
-    "uptimeMonth": "98.95%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "97.52%",
+    "uptimeMonth": "98.97%",
     "uptimeYear": "99.80%",
-    "time": 3719,
-    "timeDay": 18945,
-    "timeWeek": 16244,
-    "timeMonth": 10738,
-    "timeYear": 3719,
+    "time": 3703,
+    "timeDay": 18918,
+    "timeWeek": 16235,
+    "timeMonth": 10732,
+    "timeYear": 3703,
     "dailyMinutesDown": {
       "2026-05-28": 37,
       "2026-08-16": 18,
@@ -22,8 +22,7 @@
       "2026-10-10": 45,
       "2026-10-11": 29,
       "2026-10-12": 75,
-      "2026-10-13": 100,
-      "2026-10-16": 7
+      "2026-10-13": 100
     }
   }
 ]
